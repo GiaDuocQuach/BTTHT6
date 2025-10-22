@@ -1,0 +1,38 @@
+:root{
+  --ink:#111827; --muted:#6b7280; --bg:#f8fafc; --card:#ffffff; --accent:#0ea5e9;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{ font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.65; }
+.site-header{ position:sticky; top:0; z-index:10; background:linear-gradient(90deg,#0f172a,#1e293b); color:#fff; box-shadow:0 6px 20px rgba(0,0,0,.12); }
+.site-header .wrap{ max-width:1100px; margin:auto; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; }
+.site-header nav a{ color:#e5e7eb; text-decoration:none; margin-left:16px; font-weight:600; }
+.site-header nav a:hover{ color:#fff; text-decoration:underline; }
+.container{ max-width:1100px; margin:auto; padding:0 16px; }
+.hero{ text-align:center; padding:28px 0 8px; }
+.hero h2{ margin:0 0 6px; }
+.grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+.product-item{ background:var(--card); border:1px solid #e5e7eb; border-radius:14px; padding:14px; box-shadow:0 8px 24px rgba(0,0,0,.06); transition: transform .15s ease, box-shadow .15s ease; }
+.product-item:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,0,0,.08); }
+.product-name{ margin:0 0 6px; font-weight:800; }
+.product-desc{ margin:0 0 6px; color:var(--muted); }
+.product-price{ margin:0; color:#065f46; font-weight:700; }
+.card{ background:var(--card); border:1px solid #e5e7eb; border-radius:14px; padding:14px; }
+input,textarea,button{ font:inherit; }
+input,textarea{ width:100%; padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px; background:#fff; }
+button{ padding:10px 14px; border:1px solid #e5e7eb; border-radius:10px; cursor:pointer; background:#fff; }
+button:hover{ filter:brightness(1.05); }
+.site-footer{ margin-top:36px; background:#0b1220; color:#94a3b8; }
+.site-footer .wrap{ max-width:1100px; margin:auto; padding:16px; }
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px){
+  .grid{ grid-template-columns: 1fr; }
+  .site-header .wrap{ flex-wrap:wrap; gap:10px; }
+}
+
+.toolbar{ display:flex; gap:10px; padding:12px 0 6px; }
+.panel{ overflow:hidden; max-height:0; opacity:0; transition:max-height .35s ease, opacity .3s ease, padding .3s ease; border:1px solid #e5e7eb; border-radius:14px; padding:0 14px; background:#fff; }
+.panel.open{ max-height:420px; opacity:1; padding:14px; }
+.error{ color:#dc2626; min-height:1.2em; }
